@@ -79,11 +79,16 @@ canvas {
   padding: 15px;
 
   background: rgba(10, 100, 200, 0.5);
+  outline-color: transparent;
   color: #eee;
 
   font-size: 20px;
 
   clip-path: polygon(0 0, 100% 0, 100% 50%, 100% 100%, 25% 100%, 0 74%);
+}
+
+.list input:focus {
+  outline-color: rgba(10, 100, 200, 1);
 }
 
 .gen-info {
