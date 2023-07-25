@@ -227,7 +227,13 @@ function initGame() {
   drawLines();
 }
 
-window.addEventListener("load", initGame);
+window.addEventListener("load", () => {
+  if (innerWidth <= 700) {
+    canvas.width = 400;
+    canvas.height = 400;
+  }
+  initGame();
+});
 
 canvas.addEventListener("mousemove", function ({ offsetX: x, offsetY: y }) {
   if (!isMousePressed) return;
