@@ -70,13 +70,17 @@ function drawLines() {
   }
 }
 
+function drawCell(x, y) {
+  ctx.beginPath();
+  if (cells[y][x] === 0) ctx.fillStyle = "rgba(0, 0, 0, 0)";
+  else ctx.fillStyle = "cyan";
+  ctx.fillRect(x * cellSize, y * cellSize, cellSize, cellSize);
+}
+
 function drawCells() {
   for (let y = 0; y < cells.length; y++) {
     for (let x = 0; x < cells[y].length; x++) {
-      ctx.beginPath();
-      if (cells[y][x] === 0) ctx.fillStyle = "rgba(0, 0, 0, 0)";
-      else ctx.fillStyle = "cyan";
-      ctx.fillRect(x * cellSize, y * cellSize, cellSize, cellSize);
+      drawCell(x, y);
     }
   }
 }
@@ -153,8 +157,7 @@ function updateCell() {
 
 function startGame() {
   gameTimer = setInterval(() => {
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-
+    clearCanvas();
     generateCell();
     drawCanvas();
     setGen(++currentGen);
@@ -166,44 +169,34 @@ function stopGame() {
 }
 
 function gameByStep() {
-  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  clearCanvas();
   generateCell();
   drawCanvas();
   setGen(++currentGen);
 }
 
-function disableButtons() {
-  start.setAttribute("disabled", true);
-  step.setAttribute("disabled", true);
-  reset.setAttribute("disabled", true);
-  rand.setAttribute("disabled", true);
-  input_cell.setAttribute("disabled", true);
+function disableButtons(doms) {
+  doms.forEach((e) => e.setAttribute("disabled", true));
 }
 
-function enableButtons() {
-  start.removeAttribute("disabled");
-  step.removeAttribute("disabled");
-  reset.removeAttribute("disabled");
-  rand.removeAttribute("disabled");
-  input_cell.removeAttribute("disabled");
+function enableButtons(doms) {
+  doms.forEach((e) => e.removeAttribute("disabled"));
 }
 
 function startHandler() {
   startGame();
-  disableButtons();
+  disableButtons([start, step, reset, rand, input_cell]);
 }
 
 function pauseHandler() {
   stopGame();
-  enableButtons();
+  enableButtons([start, step, reset, rand, input_cell]);
 }
 
 function randomizeCells() {
-  for (let y = 0; y < cells.length; y++) {
-    for (let x = 0; x < cells[y].length; x++) {
-      cells[y][x] = Math.random() > 0.8 ? 1 : 0;
-    }
-  }
+  for (const element of cells)
+    for (let x = 0; x < element.length; x++)
+      element[x] = Math.random() > 0.8 ? 1 : 0;
 }
 
 function randHandler() {
