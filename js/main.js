@@ -230,6 +230,10 @@ function initGame() {
 }
 
 window.addEventListener("load", () => {
+  if (innerWidth < 700) {
+    canvas.width = 350;
+    canvas.height = 350;
+  }
   initGame();
 });
 
@@ -258,6 +262,7 @@ canvas.addEventListener("click", ({ offsetX: x, offsetY: y }) => {
   const xIndex = floor(x / (canvas.width / num));
   const yIndex = floor(y / (canvas.height / num));
 
+  console.log(xIndex, yIndex);
   cells[yIndex][xIndex] === 1
     ? setCell(xIndex, yIndex, 0)
     : setCell(xIndex, yIndex, 1);

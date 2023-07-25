@@ -21,8 +21,10 @@ canvas {
 
 @media screen and (max-width: 700px) {
   canvas {
-    margin: 0;
     margin-top: 20px;
+
+    width: 350px;
+    height: 350px;
   }
 }
 
