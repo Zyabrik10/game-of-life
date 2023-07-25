@@ -18,7 +18,7 @@ ctx.lineCap = "round";
 const floor = Math.floor;
 
 // Game configs variables
-let num = 50;
+let num = 20;
 let cellSize = canvas.width / num;
 
 let cells, genCells;
@@ -93,6 +93,8 @@ function drawCanvas() {
 function initCells() {
   cells = [];
   genCells = [];
+
+  console.log(num);
 
   for (let y = 0; y < num; y++) {
     cells.push([]);
@@ -228,10 +230,6 @@ function initGame() {
 }
 
 window.addEventListener("load", () => {
-  if (innerWidth <= 700) {
-    canvas.width = 400;
-    canvas.height = 400;
-  }
   initGame();
 });
 
