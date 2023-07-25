@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Game of Life</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" href="./index.css">
+</head>
+
+<body>
+	<div class="game">
+		<canvas></canvas>
+		<ul class="list global-list">
+			<li>
+				<button class="start global-button" type="button" title="Start game">Start</button>
+			</li>
+			<li>
+				<button class="pause global-button" type="button" title="Stop game">Stop</button>
+			</li>
+			<li>
+				<button class="reset global-button" type="button" title="Reset generation and field">Reset</button>
+			</li>
+			<li>
+				<button class="step global-button" type="button" title="Increase generation by step">By step</button>
+			</li>
+			<li>
+				<button class="rand global-button" type="button" title="Make field to be random filled">Random</button>
+			</li>
+			<li>
+				<input class="input-cell" type="number" max="100" min="3" title="Number of Cells">
+			</li>
+			<li>
+				<p class="gen-info global-p">Gen: <span class="gen"></span></p>
+			</li>
+		</ul>
+	</div>
+
+	<script src="./js/main.js"></script>
+</body>
+
+</html>

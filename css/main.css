@@ -1,0 +1,91 @@
+.global-p {
+  margin: 0;
+}
+
+.global-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.global-button {
+  border: none;
+  padding: 0;
+
+  cursor: pointer;
+
+  background: none;
+
+  color: currentColor;
+  font-size: inherit;
+  font-family: inherit;
+  font-weight: inherit;
+  font-style: inherit;
+  font-variant: inherit;
+  line-height: inherit;
+  letter-spacing: inherit;
+}
+
+.game {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+}
+
+canvas {
+  border: 1px solid rgba(0, 0, 0, 0.4);
+
+  margin-top: 10px;
+  margin-bottom: 10px;
+
+  background: transparent;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 10px;
+}
+
+.list button {
+  position: reletive;
+
+  background: rgb(10, 100, 200);
+  color: #eee;
+  padding: 20px;
+  width: 100%;
+
+  text-transform: capitalize;
+
+  transition: background-color 0.2s;
+  clip-path: polygon(0 0, 100% 0, 100% 50%, 100% 100%, 25% 100%, 0 74%);
+}
+
+.list button:hover {
+  background-color: rgb(10, 100, 180);
+}
+
+.list button:disabled {
+  background: rgba(10, 100, 200, 0.6);
+  cursor: auto;
+}
+
+.list input {
+  border: none;
+
+  width: 100px;
+  height: 100%;
+  padding: 15px;
+
+  background: rgba(10, 100, 200, 0.5);
+  color: #eee;
+
+  font-size: 20px;
+
+  clip-path: polygon(0 0, 100% 0, 100% 50%, 100% 100%, 25% 100%, 0 74%);
+}
+
+.gen-info {
+  font-size: 20px;
+}
