@@ -27,6 +27,9 @@ canvas {
 
     width: 350px;
     height: 350px;
+
+    margin-left: 0;
+    margin-right: 0;
   }
 }
 
